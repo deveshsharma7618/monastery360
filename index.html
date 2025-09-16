@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monastery360: Sikkim's Digital Heritage</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.96/build/spline-viewer.js"></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">Monastery360</div>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#virtual-tours">Virtual Tours</a></li>
+                <li><a href="#interactive-map">Interactive Map</a></li>
+                <li><a href="#digital-archives">Archives</a></li>
+                <li><a href="#cultural-calendar">Calendar</a></li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            <div class="menu-toggle" id="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <div class="theme-switcher">
+                <button id="theme-toggle">☀️ / 🌙</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section">
+            <video id="background-video" src="WhatsApp Video 2025-09-16 at 6.58.08 PM.mp4" autoplay muted></video>
+            <div class="hero-content">
+                <h1>Explore the Mystical Monasteries of Sikkim</h1>
+                <p>Monastery360 is your gateway to the rich cultural and spiritual heritage of Sikkim's ancient
+                    monasteries.</p>
+                <a href="#virtual-tours" class="cta-button">Start Your Journey</a>
+            </div>
+        </section>
+
+        <section id="virtual-tours" class="content-section">
+            <h2>Virtual Tours</h2>
+            <p>Immerse yourself in 360° panoramic views of stunning monastery interiors and their breathtaking
+                surroundings. Narrated walkthroughs are available in multiple languages to enrich your experience.</p>
+            <div class="tour-gallery">
+                <div class="tour-card">
+                    <h3>Rumtek Monastery</h3>
+                    <img src="images/rumtek-monastery.jpg" alt="Rumtek Monastery">
+                    <button>View Tour</button>
+                </div>
+                <div class="tour-card">
+                    <h3>Pemayangtse Monastery</h3>
+                    <img src="images/pemayangste-monastery.jpg" alt="Pemayangtse Monastery">
+                    <button>View Tour</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="interactive-map" class="content-section">
+            <h2>Interactive Map</h2>
+            <p>Discover the locations of over 200 monasteries on our geo-tagged map. Plan your travel routes and find
+                nearby attractions with ease.</p>
+            <div id="map-container">
+            </div>
+            <p>Below are some of the prominent monasteries featured on the map:</p>
+            <ul>
+                <li><a href="https://maps.google.com/?cid=840287795427016451&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ"
+                        target="_blank">Rumtek Monastery</a>: One of the largest monasteries in Sikkim, located near
+                    Gangtok.</li>
+                <li><a href="https://maps.google.com/?cid=6915600640110642499&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ"
+                        target="_blank">Pemayangtse Monastery</a>: An ancient and historically significant monastery in
+                    West Sikkim.</li>
+                <li><a href="https://maps.google.com/?cid=17420549354456756712&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ"
+                        target="_blank">Enchey Monastery</a>: A secluded monastery dating to 1908, situated on a hill
+                    above Gangtok.</li>
+                <li><a href="https://maps.google.com/?cid=11233871695323954928&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ"
+                        target="_blank">Dubdi Monastery</a>: Considered one of the oldest monasteries in Sikkim,
+                    established in 1701.</li>
+            </ul>
+        </section>
+
+        <section id="digital-archives" class="content-section">
+            <h2>Digital Archives</h2>
+            <p>Explore a vast collection of scanned manuscripts, intricate murals, and historical documents. Our
+                AI-powered search helps you find exactly what you're looking for.</p>
+            <div class="archive-gallery">
+                <div class="archive-item">
+                    <img src="images/manuscript-thumb.jpeg" alt="Ancient Manuscript">
+                    <span>Manuscript: The Path to Enlightenment</span>
+                </div>
+                <div class="archive-item">
+                    <img src="images/mural-thumb.jpg" alt="Monastery Mural">
+                    <span>Mural: The Wheel of Life</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="cultural-calendar" class="content-section">
+            <h2>Cultural Calendar</h2>
+            <p>Experience the vibrant festivals and sacred rituals of Sikkim firsthand. From the lively masked dances to
+                solemn ceremonies, these events offer a glimpse into the heart of Buddhist culture.</p>
+            <div class="cultural-gallery">
+                <div class="cultural-gallery">
+                    <div class="cultural-card">
+                        <img src="images/monks-cham-dance.jpeg"
+                            alt="Monks performing a Cham dance">
+                        <p>Monks perform a Cham dance, a ritual to ward off evil spirits.</p>
+                    </div>
+                    <div class="cultural-card">
+                        <img src="images/monks-cham-dance-2.jpeg"
+                            alt="Monks in colorful Cham dance costumes">
+                        <p>Colorful costumes and masks worn during monastery festivals.</p>
+                    </div>
+                    <div class="cultural-card">
+                        <img src="images/monks-playing-musical-instruments.jpeg"
+                            alt="A monk playing a traditional instrument">
+                        <p>Traditional music and instruments are a key part of the rituals.</p>
+                    </div>
+                    <div class="cultural-card">
+                        <img src="images/crowd-watching-cham-dance.jpeg"
+                            alt="A crowd watching a Cham dance performance">
+                        <p>Crowds gather to watch the sacred and festive dances.</p>
+                    </div>
+                    <div class="cultural-card">
+                        <img src="images/sikkim-festivals.jpeg"
+                            alt="Sikkimese festival procession">
+                        <p>Processions are an integral part of many Sikkimese festivals.</p>
+                    </div>
+                    <div class="cultural-card">
+                        <img src="images/tibetian-flags.jpeg"
+                            alt="Tibetan prayer flags in Sikkim">
+                        <p>Prayer flags adorn the monasteries during major events.</p>
+                    </div>
+                </div>
+        </section>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Monastery360. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>

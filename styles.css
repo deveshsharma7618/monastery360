@@ -1,0 +1,486 @@
+:root {
+    /* Light Mode Colors */
+    --background-color-light: #f4f7f6;
+    --text-color-light: #2c3e50;
+    --primary-color-light: #3498db;
+    --accent-color-light: #e67e22;
+    --card-background-light: #ffffff;
+    --border-color-light: #e0e0e0;
+}
+
+[data-theme="dark"] {
+    /* Dark Mode Colors */
+    --background-color-dark: #1a1a2e;
+    --text-color-dark: #f4f7f6;
+    --primary-color-dark: #4b89ac;
+    --accent-color-dark: #d35400;
+    --card-background-dark: #2c3e50;
+    --border-color-dark: #3a4750;
+}
+
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+    color: var(--text-color-light);
+    background-color: var(--background-color-light);
+}
+
+body[data-theme="dark"] {
+    color: var(--text-color-dark);
+    background-color: var(--background-color-dark);
+}
+
+/* Header and Navigation */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: var(--card-background-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+body[data-theme="dark"] header {
+    background-color: var(--card-background-dark);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color-light);
+}
+
+body[data-theme="dark"] .logo {
+    color: var(--primary-color-dark);
+}
+
+/* Menu Toggle and Navigation */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.menu-toggle {
+    display: none;
+    /* Hidden on large screens by default */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1001;
+}
+
+.menu-toggle .bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--text-color-light);
+    transition: all 0.3s ease-in-out;
+}
+
+body[data-theme="dark"] .menu-toggle .bar {
+    background-color: var(--text-color-dark);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(9.5px) rotate(45deg);
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-9.5px) rotate(-45deg);
+}
+
+#main-nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background-color: var(--card-background-light);
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+body[data-theme="dark"] #main-nav {
+    background-color: var(--card-background-dark);
+}
+
+#main-nav.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+}
+
+#main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#main-nav ul li {
+    margin: 1rem 0;
+}
+
+#main-nav ul li a {
+    text-decoration: none;
+    color: var(--text-color-light);
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+body[data-theme="dark"] #main-nav ul li a {
+    color: var(--text-color-dark);
+}
+
+.theme-switcher button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color-light);
+}
+
+body[data-theme="dark"] .theme-switcher button {
+    color: var(--text-color-dark);
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: absolute;
+    z-index: 1;
+    color: var(--card-background-light);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+body[data-theme="dark"] .hero-content {
+    color: var(--text-color-dark);
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--accent-color-light);
+    color: var(--card-background-light);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+body[data-theme="dark"] .cta-button {
+    background-color: var(--accent-color-dark);
+}
+
+.cta-button:hover {
+    background-color: var(--primary-color-light);
+}
+
+body[data-theme="dark"] .cta-button:hover {
+    background-color: var(--primary-color-dark);
+}
+
+spline-viewer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Content Sections */
+.content-section {
+    padding: 4rem 10%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--primary-color-light);
+}
+
+body[data-theme="dark"] .content-section h2 {
+    color: var(--primary-color-dark);
+}
+
+.tour-gallery,
+.archive-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.tour-card,
+.archive-item {
+    background-color: var(--card-background-light);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 1px solid var(--border-color-light);
+    transition: transform 0.3s;
+}
+
+body[data-theme="dark"] .tour-card,
+body[data-theme="dark"] .archive-item {
+    background-color: var(--card-background-dark);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-color-dark);
+}
+
+.tour-card:hover,
+.archive-item:hover {
+    transform: translateY(-5px);
+}
+
+.tour-card img,
+.archive-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.tour-card h3 {
+    margin-top: 0;
+    color: var(--primary-color-light);
+}
+
+body[data-theme="dark"] .tour-card h3 {
+    color: var(--primary-color-dark);
+}
+
+.tour-card button {
+    background-color: var(--primary-color-light);
+    color: #fff;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+body[data-theme="dark"] .tour-card button {
+    background-color: var(--primary-color-dark);
+}
+
+.tour-card button:hover {
+    background-color: var(--accent-color-light);
+}
+
+body[data-theme="dark"] .tour-card button:hover {
+    background-color: var(--accent-color-dark);
+}
+
+/* Placeholders for larger elements */
+.map-placeholder,
+.calendar-placeholder {
+    height: 500px;
+    background-color: var(--border-color-light);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color-light);
+    font-style: italic;
+}
+
+body[data-theme="dark"] .map-placeholder,
+body[data-theme="dark"] .calendar-placeholder {
+    background-color: var(--border-color-dark);
+    color: var(--text-color-dark);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid var(--border-color-light);
+    background-color: var(--card-background-light);
+    color: var(--text-color-light);
+}
+
+body[data-theme="dark"] footer {
+    border-top: 1px solid var(--border-color-dark);
+    background-color: var(--card-background-dark);
+    color: var(--text-color-dark);
+}
+
+/* =======================================
+   Responsive Design with Media Queries
+   ======================================= */
+@media (min-width: 901px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    #main-nav {
+        position: static;
+        width: auto;
+        box-shadow: none;
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    #main-nav ul {
+        flex-direction: row;
+        padding: 0;
+    }
+
+    #main-nav ul li {
+        margin-left: 2rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .header-right {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    header {
+        flex-direction: row;
+        padding: 1rem 5%;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .content-section {
+        padding: 3rem 5%;
+    }
+
+    .content-section h2 {
+        font-size: 2rem;
+    }
+
+    .tour-gallery,
+    .archive-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Cultural Calendar Section */
+.cultural-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.cultural-card {
+    background-color: var(--card-background-light);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid var(--border-color-light);
+}
+
+body[data-theme="dark"] .cultural-card {
+    background-color: var(--card-background-dark);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--border-color-dark);
+}
+
+.cultural-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.cultural-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.cultural-card p {
+    padding: 1rem;
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-color-light);
+}
+
+body[data-theme="dark"] .cultural-card p {
+    color: var(--text-color-dark);
+}
+
+/* Add this to your responsive media query for smaller screens */
+@media (max-width: 900px) {
+    .cultural-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+#background-video {
+    width: 100vw;
+    height: 100vh;
+}
+
+
+body[dark-theme="dark"] a {
+    color: antiquewhite;
+}
+
+body a{
+    text-decoration: none;
+    color: var(--primary-color-light);
+}
+
+a:hover {
+    font-weight: 700;
+}
